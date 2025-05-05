@@ -19,6 +19,18 @@ age_imp = SimpleImputer(missing_values=np.nan, strategy='mean')
 data.age = age_imp.fit_transform(data[['age']])
 data = data.drop(data[data.age >= 17.72].index)
 
+# Distribution of Other Cats Column
+# plt.figure()
+# ax = sns.countplot(data=data, x='other_cats', palette='flare', hue='other_cats', legend=False)
+# for p in ax.patches:
+#     percentage = '{:.1f}%'.format(100 * p.get_height()/4316)
+#     x = p.get_x() + p.get_width() / 2
+#     y = p.get_height() + 15
+#     ax.text(x, y, percentage, ha='center')
+    
+# plt.title('Distribution of "Other Cats" Column Before Imputing Missing Data')
+# plt.show()
+
 # Impute missing other_cats data (995) in a ratio of 80% YES and 20% NO, this to maintain the distribution of the existing data
 data.other_cats = data['other_cats'].fillna(pd.Series(np.random.choice(['YES', 'NO'], p=[0.8, 0.2], size=len(data))))
 data.other_cats = data['other_cats'].fillna('NO')
@@ -31,11 +43,11 @@ data.problematic_behavior = enc.fit_transform(data[['problematic_behavior']])
 
 # Impute missing problematic_behavior data (995) using KNN imputation and the last seven features
 knn = KNNImputer(n_neighbors=2)
-data.iloc[:, 4:11] = knn.fit_transform(data.iloc[:, 4:11])
+data.iloc[:, 4:12] = knn.fit_transform(data.iloc[:, 4:12])
 data.problematic_behavior = np.round(data.problematic_behavior)
 
-# Mann Whitney U test to compare the human sociability score of the group of households with just one cat 
-# and a sample of similar size of the group of households with more than one cat
+# # Mann Whitney U test to compare the human sociability score of the group of households with just one cat 
+# # and a sample of similar size of the group of households with more than one cat
 
 total_p_values= 0
 for i in range(5):
