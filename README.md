@@ -1,6 +1,6 @@
 **<h1>Exploratory Data Analysis for Machine Learning: Honors Peer-graded Assignment**</h1>
 <h2>Main Objective</h2>
-The main objective of this project is to explore the dataset given and try to find characteristics and relationships between the diferent parameters in the data with the objective to prove or not a hypothesis. The subject of te dataset that was used was the "Reliability and Validity of Seven Feline Behavior and Personality Traits" and its objective was to study the different personalities and behavior of over 4300 cats based on the answers of their owners using an online questionnaire, and study its validity and reliability. The feline personality and behavior include seven traits: 
+The main objective of this project is to explore the dataset given and try to find characteristics and relationships between the diferent parameters in the data with the objective to prove or not a hypothesis. The subject of the dataset that was used was the "Reliability and Validity of Seven Feline Behavior and Personality Traits" and its objective was to study the different personalities and behavior of over 4300 cats based on the answers of their owners using an online questionnaire, and study its validity and reliability. The feline personality and behavior include seven traits: 
 <br>
 <br>
 <ol>
